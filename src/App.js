@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 
 import { DarkModeContext } from './context/darkModeContext';
+import { AuthContext } from './context/authContext';
 
 import HomePage from './pages/Home';
 import ProfilePage from './pages/Profile';
@@ -20,9 +21,8 @@ import RightBar from './components/RightBar/RightBar';
 
 import './style.scss';
 
-const currentUser = true;
-
 const App = () => {
+  const { currentUser } = useContext(AuthContext);
   const { darkMode } = useContext(DarkModeContext);
 
   const Layout = () => {
